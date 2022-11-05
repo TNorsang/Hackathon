@@ -7,7 +7,7 @@ function initMap(x = 0,y= 0){
   
 }
 
-function campMap(i =0 ,j = 0) {
+function campMap(i=40.7127281,j=-74.0060152) {
 
     var lats=i;
     var longs=j;
