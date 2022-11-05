@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Add Map</title>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="../css/mapStyle.css"/>
+  </head>
+  <body>
+    <!-- <script type="module" src="../js/map.js"></script>
+     -->
+    <script src="../js/map.js">   
+    </script>
+     <h3>Camping Map</h3>
+    <div id = "locations">
+        <ul>
+            <li id="hither">Hither Hills State Park, Montauk, Long Island</li>
+            <li id="fish">Fish Creek Pond Campground, Adirondack Park</li>
+            <li id="north-south">North-South Lake Campground, Catskill Forest Preserve</li>
+            <li id="watkins">Watkins Glen State Park, Finger Lakes region</li>
+            <li id="letchworth">Letchworth State Park, Genesee region</li>
+            <li id="buttermilks">Buttermilks Falls State Park, near Ithaca, NY</li>
+        </ul>
+    </div>
+    <!--The div element for the map -->
+    <div id="map"></div> 
+    <div>
+        <a href="../Pages/index.html"><button>Home</button></a>
+    </div> 
+    <script>
+        const loc = document.querySelectorAll("#locations li");
+        for(let item of loc){
+            item.addEventListener("click", menuHandler);
+           
+        }
+        function menuHandler(e){
+           
+            if(e.target.id == "hither"){
+                
+                initMap(41.040619,-71.946083);
+            }
+            else if(e.target.id == "fish"){
+                initMap(44.304270,-74.358040);
+            }
+            else if(e.target.id == "north-south"){
+                initMap(42.196461,-74.096962);
+            }
+            else if(e.target.id == "watkins"){
+                initMap(42.378159,-76.872162);
+            }
+            else if(e.target.id == "letchworth"){
+                initMap(42.571792,-78.051946);
+            }
+            else if(e.target.id == "buttermilks"){
+                initMap(42.41768,-76.5231341);
+            }      
+        }
+       </script>
+  
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script> -->
+    <!--API : AIzaSyDqBAadQzKBzngKCFJjT-ZmrGdRrdYlxKA-->
+    <script defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqBAadQzKBzngKCFJjT-ZmrGdRrdYlxKA&callback=initMap&v=weekly"></script>
+   
+  </body>
+</html>
