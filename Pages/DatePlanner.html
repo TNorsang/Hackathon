@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DatePlanner</title>
+</head>
+<body>
+
+       <div class="weatherWidget"></div>
+        <div id = "information">
+           
+        </div>
+    
+    <script>
+        window.weatherWidgetConfig = window.weatherWidgetConfig || [];
+        window.weatherWidgetConfig.push({
+            selector: ".weatherWidget",
+            apiKey: "7GMK2RS7TDRDBZB86YHN67WPA", //Sign up for your personal key
+            location: "NewYork, USA", //Enter an address
+            unitGroup: "us", //"us" or "metric"
+            forecastDays: 7, //how many days forecast to show
+            title: "NewYork ,USA", //optional title to show in the 
+            showTitle: true,
+            showConditions: true
+        });
+
+        (function () {
+            var s = document.createElement('script');
+            s.src = "../js/fore-cast-widget.js";
+            s.setAttribute('data-timestamp', +new Date());
+          document.body.appendChild(s);
+             
+        })();
+
+
+        fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/NewYork%2CUSA?unitGroup=us&key=7GMK2RS7TDRDBZB86YHN67WPA&contentType=json')
+                .then((response) => response.json())
+                .then((json) => logic(json));
+
+        function logic(json){
+            console.log(json);
+            var days = json.days;
+            var maxt = 0;
+            var mint = 999;
+            var BestDays = {
+
+                Days:[],AvgTemp:[]
+            };
+            var des = json.description;
+            for(let i  = 0; i < 6; i++){
+                if (days[i].tempmax > maxt){
+                    maxt = days[i].tempmax;
+                }
+                if (days[i].tempmin < mint) {
+                    mint = days[i].tempmin;
+                }
+                avgT = (maxt + mint)/2;
+
+                if(avgT > 60){
+                    BestDays.Days.push(days[i]);
+                    BestDays.AvgTemp.push(avgT);
+                }
+
+            }
+             
+            for(let j = 0; j < BestDays.Days.length; j++){
+                console.log(BestDays.Days[j]);
+                console.log(BestDays.AvgTemp[j] + " average temp");
+            }
+
+            for (let i = 0; i < 3; i++) {
+                const info = document.getElementById("information");
+                var p = document.createElement("p");
+                var unorderedList = document.createElement("ul");
+                switch(i){
+                    case 0:
+                        p.innerText = "Highest Temperature for this camping week is " + maxt + "°F";
+                        info.appendChild(p);
+                        break;
+                    case 1:
+                        p.innerText = "Lowest Temperature for this camping week is " + mint + "°F";
+                        info.appendChild(p);
+                        break;
+                    case 2:
+                        info.appendChild(unorderedList);
+                        p.innerText = "Great Days ";
+                        for(let index  = 0; index < BestDays.Days.length; index++){
+                            var list = document.createElement("li");
+                            var date = new Date(BestDays.Days[index].datetimeEpoch*1000);
+                            list.innerText = date.toDateString();
+                            unorderedList.append(list);
+                            
+                            
+                        }
+                        break;
+                    default:
+                        p.innerText = des;
+                        info.appendChild(p);
+                        break;  
+            }
+           
+            
+        }
+        
+        
+    }
+    </script>
+
+
+
+</body>
+</html>
