@@ -58,7 +58,7 @@
                 }
                 avgT = (maxt + mint)/2;
 
-                if(avgT > 60){
+                if(avgT > 64){
                     BestDays.Days.push(days[i]);
                     BestDays.AvgTemp.push(avgT);
                 }
@@ -70,7 +70,7 @@
                 console.log(BestDays.AvgTemp[j] + " average temp");
             }
 
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 4; i++) {
                 const info = document.getElementById("information");
                 var p = document.createElement("p");
                 var unorderedList = document.createElement("ul");
@@ -84,12 +84,14 @@
                         info.appendChild(p);
                         break;
                     case 2:
+                        p.innerText = "Recommended days for camping are:";
+                        info.appendChild(p);
                         info.appendChild(unorderedList);
-                        p.innerText = "Great Days ";
+                        
                         for(let index  = 0; index < BestDays.Days.length; index++){
                             var list = document.createElement("li");
                             var date = new Date(BestDays.Days[index].datetimeEpoch*1000);
-                            list.innerText = date.toDateString();
+                            list.innerText = date.toDateString() + "     with an average temperature of "+ Number(BestDays.AvgTemp[index]).toFixed(2)  + "°F";
                             unorderedList.append(list);
                             
                             
