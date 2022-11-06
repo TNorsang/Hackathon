@@ -9,7 +9,7 @@
 <body>
     
 
-     <form action="../php/Console.php" method="post">
+     <form action="../php/Con.php" method="post">
        
     <input type="submit">
     </form>
