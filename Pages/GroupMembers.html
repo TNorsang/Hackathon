@@ -7,13 +7,30 @@
     <title>GroupMembers</title>
 </head>
 <body>
+    
+    <form action="../php/Checklists.php" method="post">
+        <label for="size">How many members?</label>
+           <input type="number" id = "size" name="size" value="0">
+        
+           <div id ="names">
+               <p>Enter your Group Member Names:</p> <div style = "color: red; text-align: center;border: red solid 2px; padding: 10px;" onclick="addMember()">Add Member</div> <br>
+   
+           </div>
+           
+       <button type="submit">Submit</button>
+       </form>
+
+
+
+
+
     <script>
         class Person {
   name;
   geoX;
   geoY;
   icon;
-  
+
   constructor(name) {
     this.name = name;
     this.geoX = 0;
@@ -35,12 +52,43 @@
   }
 
 }
-Brian = new Person("Brian");
-Norsang = new Person("Norsang");
-Brian.introduceSelf();
-Norsang.introduceSelf();
+
+
+
+    var field = document.querySelector("#names");
+    var i = 1;
+    var size  = document.querySelector("#size");
+    console.log(field);
+
+
+    function addMember(){
+    var el = document.createElement("label");
+    el.setAttribute("for","name"+i);
+    el.innerText = "Name of Member " + i + " "; 
+    var el3 = document.createElement("br");
+    var el2 = document.createElement("input");
+    el2.setAttribute("type","text");
+    el2.setAttribute("name","name"+i);
+    el2.setAttribute("value","");
+    el2.setAttribute("placeholder","Enter A Group Member Name");
+    i++;
+        
+    field.appendChild(el3);
+    field.appendChild(el);
+    
+    field.appendChild(el2);
+    size.value = i;
+ 
+    }
+    
+    
+   
+
     </script>
 
+
+
+   
 
 
 </body>

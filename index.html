@@ -1,20 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camp</title>
+    <title>Welcome Campers</title>
+    <link rel="stylesheet" href="css/styleMain.css">
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <li><a href="./Pages/Checklist.html">CHECKLIST</a></li>
-            <li><a href="./Pages/musicPlayer.html">MUSIC</a></li>
-            <li><a href="./Pages/Map.html">MAP</a></li>
-            <li><a href="./Pages/DatePlanner.html">Weather</a></li>
-            <li><a href="./Pages/tracking.html">Track Your Group!</a></li>
-        </ul>
-    </nav>
+    
+    <div id="container">
+        <title>GROUPSCAMPS</title>
+        <main id="swup" class="transition-fade">
+            <h1>WELCOME TO GROUPSCAMPS</h1>
+        </main>
+        <div id="inputNames">
+            <input id="UniqueID1" type="text" name="UniqueID" placeholder="Enter your group name">
+            <input id="UniqueID2" type="text" name="UniqueID" placeholder="Enter a group name">
+        </div>
+        <audio controls autoplay loop id="track1">
+            <source src="./audio/lofisong.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <form action="./php/location.php" method="post">
+        <input type="text" name="group_id">
+        <input type="submit">
+    </form>
+    
+
+    <!-- <button id="myButton" onclick="checkforid()" type="button">Continue your adventure!</button>
+    <button id="myButton2" onclick="mykey(5)" type="button">Begin your journey here! </button>
+   
+    <button id="submitbutton" onclick="submitId()" type="button">submit!</button>
+    <button id="submitbutton1" onclick="submitnoid()" type="button">submit!</button> -->
+
+
+
+    <script>
+        var UniqueIDval;
+        var audiofile = document.getElementById("track1");
+        //stroe the values of the audio files in here
+        var i = 0;
+        //call an animation event: after animation is completed pop up the buttons
+        // Music Only 
+        function mymusic() {
+            //alert("CHnaging music");
+            audiofile.src = "audio/audiofile2.mp3";
+        }
+        function checkforid() {
+            var x = document.getElementById("UniqueID1");
+            var b1 = document.getElementById("myButton");
+            var b2 = document.getElementById("myButton2");
+            b1.style.visibility = "hidden";
+            b2.style.visibility = "hidden"
+            x.style.visibility = "visible"
+            showsubmit();
+            mymusic();
+
+
+        }
+
+
+        function mykey(length) {
+            // declare all characters
+            mymusic();
+
+            var x = document.getElementById("UniqueID2");
+            var b1 = document.getElementById("myButton");
+            var b2 = document.getElementById("myButton2");
+            b1.style.visibility = "hidden";
+            b2.style.visibility = "hidden";
+            x.style.visibility = "visible";
+
+
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = ' ';
+            const charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            UniqueIDval = result;
+            console.log(UniqueIDval);
+            showsubmit1();
+
+        }
+
+        function showsubmit() {
+            var myb = document.getElementById("submitbutton");
+            myb.style.visibility = "visible";
+
+        }
+        function showsubmit1() {
+            var myb = document.getElementById("submitbutton1");
+            myb.style.visibility = "visible";
+        }
+        function submitnoid() {
+            alert("redirecting");
+            window.location.href = "./Pages/page3.html";
+
+        }
+        function submitId() {
+            alert("validating data");
+
+            if (1 == 1) {
+                window.location.href = "./Pages/page2.html";
+            }
+
+        }
+                //get all the buttons inside the same div
+        
+    </script>
 </body>
+
 </html>

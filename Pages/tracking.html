@@ -9,7 +9,7 @@
 </head>
 <body>
    
-    <nav>
+    <!-- <nav>
         <ul>
             <li><a href="../Pages/Checklist.html">CHECKLIST</a></li>
             <li><a href="../Pages/musicPlayer.html">MUSIC</a></li>
@@ -17,7 +17,7 @@
             <li><a href="../Pages/DatePlanner.html">Weather</a></li>
             <li><a href="../Pages/tracking.html">Track Your Group!</a></li>
         </ul>
-    </nav>
+    </nav> -->
     <h1>Track Your Group!</h1>
   
     <button id="start" onclick="startI()">Start Tracking</button>
@@ -46,14 +46,10 @@
         function createInterval(){
             myInterval = setInterval(startTracking, 2000);
         }
-        
-        
-
         function stopI(){
             console.log("Stopped Tracking");
             clearInterval(myInterval);
         }
-        
         function startTracking(){
             console.log("tracking2");
             // Watch position watches for change of position and update
