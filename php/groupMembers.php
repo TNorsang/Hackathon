@@ -118,7 +118,7 @@
         if ($conn->query($sqlUpdate) === TRUE) {
             echo "record inserted successfully";
         } else {
-            echo "Error: " . $sqlUpdate . "<br>" . $conn->error;
+            echo "Error: " . $sqlUpdate . "<br>" . $conn-> error;
         }
 
         // Updating

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,71 +6,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Campers</title>
-    <link rel="stylesheet" href="css/styleMain.css">
+    <title>GROUPSCAMPS</title>
+    <link rel="stylesheet" href="styleMain.css">
 </head>
 
 <body>
-    
-    <div id="container">
-        <title>GROUPSCAMPS</title>
-        <main id="swup" class="transition-fade">
-            <h1>WELCOME TO GROUPSCAMPS</h1>
-        </main>
-        <div id="inputNames">
+   
+   
+        <h1>WELCOME TO GROUPSCAMPS</h1>
+        
+        <!--
+            <div id="inputNames">
             <input id="UniqueID1" type="text" name="UniqueID" placeholder="Enter your group name">
             <input id="UniqueID2" type="text" name="UniqueID" placeholder="Enter a group name">
-        </div>
-        <audio controls autoplay loop id="track1">
-            <source src="./audio/lofisong.mp3" type="audio/mp3">
-        </audio>
-    </div>
+            </div>
+        
+        -->
+        
 
-    <form action="location.php" method="post">
-        <input type="text" name="group_id">
-        <input type="submit">
+
+    <form id="groupnameform" action="location.php" method="post">
+        <input type="text" name="group_id" id="group_id" placeholder="Group Name goes here">
+        <input type="submit" id="submitname">
     </form>
     
 
+    <button id="myButton2" onclick="mykey(5)" type="button">Begin your journey here! </button>
+   
+   <!-- <button id="submitbutton" onclick="submitId()" type="button">submit!</button>
+    <button id="submitbutton1" onclick="submitnoid()" type="button">submit!</button> -->
+
+    <audio controls autoplay id="track1">
+        <source src="./audio/lofisong.mp3" type="audio/mp3">
+    </audio>
 
 
     <script>
         var UniqueIDval;
+        var background;
+       
         var audiofile = document.getElementById("track1");
         //stroe the values of the audio files in here
         var i = 0;
         //call an animation event: after animation is completed pop up the buttons
         // Music Only 
-        function mymusic() {
-            //alert("CHnaging music");
-            audiofile.src = "audio/audiofile2.mp3";
-        }
-        function checkforid() {
-            var x = document.getElementById("UniqueID1");
-            var b1 = document.getElementById("myButton");
-            var b2 = document.getElementById("myButton2");
-            b1.style.visibility = "hidden";
-            b2.style.visibility = "hidden"
-            x.style.visibility = "visible"
-            showsubmit();
-            mymusic();
+        // function mymusic() {
+            
+        //     audiofile.src = "audio/audiofile2.mp3";
+        //     changebackground();
 
-
-        }
-
-
+        // }
+       
         function mykey(length) {
             // declare all characters
-            mymusic();
-
-            var x = document.getElementById("UniqueID2");
-            var b1 = document.getElementById("myButton");
+          
             var b2 = document.getElementById("myButton2");
-            b1.style.visibility = "hidden";
+            var x = document.getElementById("groupnameform");
             b2.style.visibility = "hidden";
-            x.style.visibility = "visible";
-
-
+            x.style.opacity = "1";
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let result = ' ';
             const charactersLength = characters.length;
@@ -79,13 +73,13 @@
             UniqueIDval = result;
             console.log(UniqueIDval);
             showsubmit1();
+            mymusic();
+
 
         }
 
-        function showsubmit() {
-            var myb = document.getElementById("submitbutton");
-            myb.style.visibility = "visible";
-
+        function changebackground(){
+            document.body.style.backgroundImage = "url('mediaimgs/campfriegif.gif')";
         }
         function showsubmit1() {
             var myb = document.getElementById("submitbutton1");
