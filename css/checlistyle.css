@@ -28,6 +28,11 @@ ul {
     font-size: 1000p;
 }
 
+#myInput{
+    position: relative;
+    left: 13%;
+}
+
 /* Style the list items */
 ul li {
     cursor: pointer;
@@ -117,14 +122,15 @@ input {
     position: relative;
     cursor: pointer;
     color: #ffffff;
-    top: -20px;
-    right: 150px;
+    top: -9px;
+    left: 25px;
     font-family: Arial;
-    font-size: 29px;
+    font-size: 18px;
     font-weight: bold;
     padding: 14px 36px;
     text-decoration: wavy;
     text-shadow: 0px 1px 0px #283966;
+
 }
 
 .addBtn:hover {
