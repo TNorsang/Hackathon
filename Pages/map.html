@@ -10,16 +10,32 @@
      -->
     <script src="../js/map.js">   
     </script>
+    <script src="../js/HandleData.js"></script>
      <h3>Camping Map</h3>
     <div id = "locations">
-        <ul>
-            <li id="hither">Hither Hills State Park, Montauk, Long Island</li>
-            <li id="fish">Fish Creek Pond Campground, Adirondack Park</li>
-            <li id="north-south">North-South Lake Campground, Catskill Forest Preserve</li>
-            <li id="watkins">Watkins Glen State Park, Finger Lakes region</li>
-            <li id="letchworth">Letchworth State Park, Genesee region</li>
-            <li id="buttermilks">Buttermilks Falls State Park, near Ithaca, NY</li>
-        </ul>
+       <!-- <form action="../js/index.php" method="get"> -->
+        
+           <input type="radio" name="radio" id="heather" value="he">
+            <label for="heather">Hither Hills State Park, Montauk, Long Island</label> <br>
+
+            <input type="radio" name="radio" id="fish" value="fish"> 
+            <label  for="fish">Fish Creek Pond Campground, Adirondack Park</label><br>
+
+            <input type="radio" name="radio" id="north-south" value="north-south">
+            <label  for="north-south">North-South Lake Campground, Catskill Forest Preserve</label><br>
+
+            <input type="radio" name="radio" id="watkins" value = "watkins" >
+            <label for="watkins">Watkins Glen State Park, Finger Lakes region</label> <br>
+
+            <input type="radio" name="radio" id="letchworth" value = "letchworth">
+            <label  for="letchworth">Letchworth State Park, Genesee region</label> <br>
+            <input type="radio" name="radio" id="buttermilks" value= "buttermilks" >
+            <label for="buttermilks">Buttermilks Falls State Park, near Ithaca, NY</label> <br>
+        
+        <button onclick="MapAdvance(clicked)">NEXT</button>
+       <!-- </form> -->
+
+    
     </div>
     <!--The div element for the map -->
     <div id="map"></div> 
@@ -27,30 +43,36 @@
         <a href="../index.html"><button>Home</button></a>
     </div> 
     <script>
-        const loc = document.querySelectorAll("#locations li");
+        const loc = document.querySelectorAll("#locations input");
+        var clicked;
         for(let item of loc){
             item.addEventListener("click", menuHandler);
         }
         function menuHandler(e){
-           
-            if(e.target.id == "hither"){
-                
-                initMap(41.040619,-71.946083);
+            
+            if(e.target.id == "heather"){
+                initMap(41.040619, -71.946083);
+                clicked = "heather";
             }
             else if(e.target.id == "fish"){
                 initMap(44.304270,-74.358040);
+                clicked = "fish";
             }
             else if(e.target.id == "north-south"){
                 initMap(42.196461,-74.096962);
+                 clicked = "north-south";
             }
             else if(e.target.id == "watkins"){
                 initMap(42.378159,-76.872162);
+                 clicked = "watkins";
             }
             else if(e.target.id == "letchworth"){
                 initMap(42.571792,-78.051946);
+                 clicked = "letchworth";
             }
             else if(e.target.id == "buttermilks"){
                 initMap(42.41768,-76.5231341);
+                 clicked = "buttermilks";
             }      
         }
        </script>

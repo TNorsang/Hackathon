@@ -79,6 +79,3 @@ function campMap(i=0.7127281,j=-74.0060152, ic = "girl1") {
 
   // window.initMap is the set syntax to set a map
 
-
-  
-  
