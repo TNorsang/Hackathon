@@ -61,9 +61,9 @@ function campMap(i=0.7127281,j=-74.0060152, ic = "girl1") {
     //   icon:`../Icons/${ic}.png` ,
     //   map: map,
     // });
-    createMarker({ lat: lats+0.03, lng: longs-0.02}, "girl2" , map);
+    createMarker({ lat: lats+0.003, lng: longs-0.002}, "girl2" , map);
     createMarker(area, ic , map);
-    createMarker({ lat: lats+0.1, lng: longs}, "guy2" , map);
+    createMarker({ lat: lats+0.01, lng: longs}, "guy2" , map);
   }
 
   function createMarker(area,ic, map){

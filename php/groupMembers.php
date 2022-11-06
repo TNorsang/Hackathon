@@ -11,7 +11,7 @@
 
      <form action="../php/Checklists.php" method="post">
      
-        <button onclick = addBox()></button>
+        <!-- <button onclick = addBox()></button> -->
         <div id ="names">
             <p>Enter your Group Member Names:</p> <div style = "color: red; text-align: center;border: red solid 2px; padding: 10px;" onclick="addMember()">Add Member</div> <br>
 

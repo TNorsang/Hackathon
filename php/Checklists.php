@@ -7,43 +7,31 @@
     <title>GroupMembers</title>
 </head>
 <body>
-    
-
-     <form action="../php/Con.php" method="post">   
+    <form action="../php/Con.php" method="post">   
     <input type="submit">
     </form>
-
-
-
-
-
     <script>
         class Person {
-  name;
-  geoX;
-  geoY;
-  icon;
-
+        name;
+        geoX;
+        geoY;
+        icon;
   constructor(name) {
     this.name = name;
     this.geoX = 0;
     this.geoY = 0;
     this.icon = "default";
   }
-
   setGeoXANDY(geoX,geoY){
     this.geoX = geoX;
     this.geoY = geoY;
   }
-
   setIcon(ic){
     this.icon = ic;
   }
-
   introduceSelf() {
     console.log(`Hi! I'm ${this.name} I am at location ${this.geoX} , ${this.geoY}`);
   }
-
 }
 
 

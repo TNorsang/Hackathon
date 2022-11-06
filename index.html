@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,58 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROUPSCAMPS</title>
     <link rel="stylesheet" href="styleMain.css">
+    
 </head>
 
 <body>
-   
-   
-        <h1>WELCOME TO GROUPSCAMPS</h1>
-        
-        <!--
+
+
+    <h1>WELCOME TO GROUPSCAMPS</h1>
+
+    <!--
             <div id="inputNames">
             <input id="UniqueID1" type="text" name="UniqueID" placeholder="Enter your group name">
             <input id="UniqueID2" type="text" name="UniqueID" placeholder="Enter a group name">
             </div>
         
         -->
-        
+       
 
 
     <form id="groupnameform" action="location.php" method="post">
         <input type="text" name="group_id" id="group_id" placeholder="Group Name goes here">
         <input type="submit" id="submitname">
     </form>
-    
+
 
     <button id="myButton2" onclick="mykey(5)" type="button">Begin your journey here! </button>
-   
-   <!-- <button id="submitbutton" onclick="submitId()" type="button">submit!</button>
+
+    <!-- <button id="submitbutton" onclick="submitId()" type="button">submit!</button>
     <button id="submitbutton1" onclick="submitnoid()" type="button">submit!</button> -->
 
-    <audio controls autoplay id="track1">
-        <source src="./audio/lofisong.mp3" type="audio/mp3">
+    <audio controls id="track1">
+        <source src="audio/lofisong.mp3" type="audio/mp3">
     </audio>
 
 
+
     <script>
+
         var UniqueIDval;
         var background;
-       
+
         var audiofile = document.getElementById("track1");
+        console.log(audiofile);
         //stroe the values of the audio files in here
         var i = 0;
         //call an animation event: after animation is completed pop up the buttons
         // Music Only 
         // function mymusic() {
-            
+
         //     audiofile.src = "audio/audiofile2.mp3";
         //     changebackground();
 
         // }
-       
+        function mymusic() {
+            audiofile.src = "audio/audfiofile2.mp3";
+        }
+
         function mykey(length) {
             // declare all characters
-          
+
             var b2 = document.getElementById("myButton2");
             var x = document.getElementById("groupnameform");
             b2.style.visibility = "hidden";
@@ -71,35 +77,30 @@
                 result += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
             UniqueIDval = result;
-            console.log(UniqueIDval);
+            // alert(UniqueIDval);
             showsubmit1();
             mymusic();
 
 
         }
 
-        function changebackground(){
+        function changebackground() {
             document.body.style.backgroundImage = "url('mediaimgs/campfriegif.gif')";
         }
         function showsubmit1() {
             var myb = document.getElementById("submitbutton1");
+            changebackground();
             myb.style.visibility = "visible";
+
         }
         function submitnoid() {
             alert("redirecting");
             window.location.href = "./Pages/page3.html";
 
         }
-        function submitId() {
-            alert("validating data");
 
-            if (1 == 1) {
-                window.location.href = "./Pages/page2.html";
-            }
-
-        }
                 //get all the buttons inside the same div
-        
+
     </script>
 </body>
 
