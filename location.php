@@ -15,7 +15,7 @@
         <div id = "locations">            
             <input type="radio" name="radio" id="heather" value="heather">
             <label for="heather">Hither Hills State Park, Montauk, Long Island</label> <br>
-
+            <!-- heather fish north-south watkins letchworth buttermilks -->
             <input type="radio" name="radio" id="fish" value="fish"> 
             <label  for="fish">Fish Creek Pond Campground, Adirondack Park</label><br>
 

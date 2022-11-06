@@ -1,4 +1,6 @@
 
+
+
 var ic = "default.png";
 // Initialize and add the map
 function initMap(x = 0,y= 0){
@@ -39,7 +41,6 @@ function campMap(i=40.7127281,j=-74.0060152, zum = 14) {
     
     var marker = new google.maps.Marker({
       position: area,
-      icon: icon,
       map: map,
     });
   }
