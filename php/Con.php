@@ -58,7 +58,7 @@
             margin-top: 500px;
             background: rgb(28,29,49);
             background: linear-gradient(359deg, rgba(28,29,49,1) 0%, rgba(77,83,129,1) 100%, rgba(77,83,129,1) 100%);
-            height: 1000px;
+            height: 600px;
         }
         #weather{
             position: relative;
@@ -289,8 +289,8 @@ src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDqBAadQzKBzngKCFJjT-ZmrG
     ?>
         
     <!-- <iframe src="../Pages/DatePlanner.html" frameborder="0" height="400" width = "100%"></iframe> -->
-    <iframe src="../Pages/Checklist.html" frameborder="0" height="400" width = "100%"></iframe>
-    <iframe src="../Pages/tracking.html" frameborder="0" height="400" width = "100%"></iframe>
+    <iframe src="../Pages/Checklist.html" frameborder="0" height="1000px" width = "100%"></iframe>
+    <iframe src="../Pages/tracking.html" frameborder="0" height="800" width = "100%"></iframe>
     
 </body>
 </html>
