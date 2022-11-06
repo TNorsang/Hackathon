@@ -135,7 +135,7 @@ switch ($loc) {
     <script src=\"../js/map.js\">   
     </script>
     <script src=\"../js/HandleData.js\"></script>
-     <h3>heather Map</h3>
+     <h3 style=\"text-align:center; background-color:rgb(25,24,23)\">heather Map</h3>
     <div id=\"map\"></div> 
     <script>
        
@@ -187,7 +187,7 @@ switch ($loc) {
     <script src=\"../js/map.js\">   
     </script>
     <script src=\"../js/HandleData.js\"></script>
-     <h3>North-south Map</h3>
+     <h3  style=\"text-align:center\">North-south Map</h3>
     <div id=\"map\"></div> 
     <script>
        
@@ -213,7 +213,7 @@ case "watkins":
 <script src=\"../js/map.js\">   
 </script>
 <script src=\"../js/HandleData.js\"></script>
-<h3>Watkins Map</h3>
+<h3  style=\"text-align:center; color:white ; background-color:rgb(25,24,23)\">Watkins Map</h3>
 <div id=\"map\"></div> 
 <script>
 
@@ -239,7 +239,7 @@ src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDqBAadQzKBzngKCFJjT-ZmrG
     <script src=\"../js/map.js\">   
     </script>
     <script src=\"../js/HandleData.js\"></script>
-     <h3>Letchworth Map</h3>
+     <h3  style=\"text-align:center; color:white ; background-color:rgb(25,24,23)\">Letchworth Map</h3>
     <div id=\"map\"></div> 
     <script>
        
@@ -265,7 +265,7 @@ src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDqBAadQzKBzngKCFJjT-ZmrG
     <script src=\"../js/map.js\">   
     </script>
     <script src=\"../js/HandleData.js\"></script>
-     <h3>ButterMilk Map</h3>
+    <h3  style=\"text-align:center; color:white ; background-color:rgb(25,24,23)\">ButterMilk Map</h3>
     <div id=\"map\"></div> 
     <script>
        
