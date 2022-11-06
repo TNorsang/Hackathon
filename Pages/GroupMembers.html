@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupMembers</title>
+</head>
+<body>
+    <script>
+        class Person {
+  name;
+  geoX;
+  geoY;
+  icon;
+  
+  constructor(name) {
+    this.name = name;
+    this.geoX = 0;
+    this.geoY = 0;
+    this.icon = "default";
+  }
+
+  setGeoXANDY(geoX,geoY){
+    this.geoX = geoX;
+    this.geoY = geoY;
+  }
+
+  setIcon(ic){
+    this.icon = ic;
+  }
+
+  introduceSelf() {
+    console.log(`Hi! I'm ${this.name} I am at location ${this.geoX} , ${this.geoY}`);
+  }
+
+}
+Brian = new Person("Brian");
+Norsang = new Person("Norsang");
+Brian.introduceSelf();
+Norsang.introduceSelf();
+    </script>
+
+
+
+</body>
+</html>

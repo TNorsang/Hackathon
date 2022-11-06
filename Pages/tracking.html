@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking App</title>
+    <link rel="stylesheet" type="text/css" href="../css/mapStyle.css"/>
+</head>
+<body>
+   
+    <nav>
+        <ul>
+            <li><a href="../Pages/Checklist.html">CHECKLIST</a></li>
+            <li><a href="../Pages/musicPlayer.html">MUSIC</a></li>
+            <li><a href="../Pages/Map.html">MAP</a></li>
+            <li><a href="../Pages/DatePlanner.html">Weather</a></li>
+            <li><a href="../Pages/tracking.html">Track Your Group!</a></li>
+        </ul>
+    </nav>
+    <h1>Track Your Group!</h1>
+  
+    <button id="start" onclick="startI()">Start Tracking</button>
+    <button id="stop" onclick="stopI()">Stop Tracking</button>
+    <div id="map"></div> 
+    <script>
+
+        const groupMember = [];
+        const start = document.querySelector("#start");
+        const stop = document.querySelector("#stop");
+        var time  = new Date();
+        
+        var lat = [];
+        var long = [];
+
+     
+
+        // start.addEventListener("click", createInterval);
+
+        function startI(){
+            console.log("started");
+            window.addEventListener("load",createInterval());
+        }
+        
+        var myInterval;
+        function createInterval(){
+            myInterval = setInterval(startTracking, 2000);
+        }
+        
+        
+
+        function stopI(){
+            console.log("Stopped Tracking");
+            clearInterval(myInterval);
+        }
+        
+        function startTracking(){
+            console.log("tracking2");
+            // Watch position watches for change of position and update
+           
+            navigator.geolocation.getCurrentPosition(
+                data => {
+                    if(data.coords.latitude != undefined)
+                    {
+                    lat.push(data.coords.latitude);
+                    long.push(data.coords.longitude);
+                    }
+                  
+                },
+                error => console.log(error),
+                {
+                    enableHighAccuracy: true
+                }
+            );
+            if(lat[lat.length-1] != undefined)  {
+            initMap(lat[lat.length-1],long[lat.length-1],"parking"); 
+            }
+            
+        }
+    </script>
+     <script src="../js/map2.js"></script>
+ <script defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqBAadQzKBzngKCFJjT-ZmrGdRrdYlxKA&callback=initMap&v=weekly"></script>
+
+</body>
+</html>
